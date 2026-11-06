@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Ask a question or share your experience
+    url: https://github.com/goAuD/security-review-ledger/discussions
+    about: Discuss usage, review workflows and early ideas with the community.
   - name: Report a security vulnerability privately
     url: https://github.com/goAuD/security-review-ledger/security/advisories/new
     about: Report vulnerabilities in this skill or its bundled examples without public disclosure.
