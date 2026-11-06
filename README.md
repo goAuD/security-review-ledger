@@ -26,7 +26,7 @@ The two views point to the same scenario records. An unresolved finding can appe
 From the project you want to review, choose the relevant client when prompted.
 
 ```sh
-npx skills add goAuD/security-review-ledger@v0.1.0 --skill security-review-ledger
+npx skills add goAuD/security-review-ledger@v0.1.1 --skill security-review-ledger
 ```
 
 Then give the agent a bounded task:
@@ -71,6 +71,9 @@ Read the [requirement](examples/recipe-access/requirement.md), then compare your
 | [Skill instructions](skills/security-review-ledger/SKILL.md) | Define scope, check claims, preserve attempts and report in the user's language. |
 | [Ledger template](skills/security-review-ledger/assets/ledger-template.md) | Start a review with two views of one set of scenario records. |
 | [Standards references](skills/security-review-ledger/references/standards.md) | Select bounded mappings to ISO/IEC 27034-1, NIST SSDF and OWASP ASVS. |
+| [Local evidence guide](skills/security-review-ledger/references/local-evidence.md) | Select the project runtime, distinguish attempted from completed checks and preserve private evidence. |
+
+The instructions include a requirement/hypothesis table and scenario matrix, and record whether a check reached its target and assertion. See the [v0.1.1 notes](releases/v0.1.1.md) for verification and limits. An installation pinned to `v0.1.0` keeps the earlier instructions until explicitly updated.
 
 Conclusions apply to the examined scope. Standards references do not establish compliance, and an empty gap list does not establish complete coverage. Keep private application reports in an authorized location; the examples here use synthetic data.
 
