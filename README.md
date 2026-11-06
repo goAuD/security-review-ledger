@@ -92,9 +92,9 @@ The skill follows the [open Agent Skills format](https://agentskills.io/specific
 
 | Check | Evidence and boundary |
 | --- | --- |
-| Recipe handler | The [current example review](examples/recipe-access/review.md) records five passing tests on Windows with Node.js 22.23.4. The earlier [v0.1.0 release CI](https://github.com/goAuD/security-review-ledger/actions/runs/42191776042) covered the original three tests on Linux and Windows with Node.js 22.20.0 and 24.22.2. |
-| Codex and Claude Code installation | A fresh `v0.1.0` installation on Windows with skills CLI 1.7.6 and Node.js 22.23.4 matched all four files for each client. See the [release evidence](releases/v0.1.0.md). |
-| Agent behavior | Installation does not establish workflow behavior. An actual Claude Code workflow and additional clients remain open checks. |
+| Recipe handler | The [current example review](examples/recipe-access/review.md) records five passing tests on Windows with Node.js 22.23.4. The [v0.1.1 CI run](https://github.com/goAuD/security-review-ledger/actions/runs/42294067442) passed all five tests on Linux and Windows with Node.js 22.20.0 and 24. |
+| Codex and Claude Code installation | A fresh `v0.1.1` installation on Windows with skills CLI 1.7.6 and Node.js 22.23.4 matched all five files for each client. See the [version evidence](releases/v0.1.1.md). |
+| Agent behavior | Two paired synthetic Codex trials checked execution boundaries and preservation of historical evidence after a changed requirement; see the [results and limits](releases/v0.1.1.md). Installation does not establish workflow behavior. An actual Claude Code workflow and additional clients remain open checks. |
 | Automated checks | [GitHub Actions](https://github.com/goAuD/security-review-ledger/actions/workflows/checks.yml) runs the example on Linux and Windows with Node.js 22.20.0 and 24. Inspect the run for the revision you use. |
 
 <details>
