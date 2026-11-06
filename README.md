@@ -26,7 +26,7 @@ The two views point to the same scenario records. An unresolved finding can appe
 From the project you want to review, choose the relevant client when prompted.
 
 ```sh
-npx skills add goAuD/security-review-ledger --skill security-review-ledger
+npx skills add goAuD/security-review-ledger@v0.1.0 --skill security-review-ledger
 ```
 
 Then give the agent a bounded task:
@@ -76,7 +76,10 @@ Conclusions apply to the examined scope. Standards references do not establish c
 
 ## Help shape the next review
 
-Useful contributions include a clearer instruction, a small synthetic example or a reproducible report from a client you use. A particularly useful next example would show an old result becoming `recheck-needed`, then being checked again without losing its history.
+Useful contributions include a clearer instruction, a small synthetic example or a reproducible report from a client you use. Two focused tasks are open:
+
+- [Add a small `recheck-needed` example](https://github.com/goAuD/security-review-ledger/issues/1) — preserve an old result while recording a changed requirement and a fresh check. **Good first issue.**
+- [Verify one Claude Code workflow](https://github.com/goAuD/security-review-ledger/issues/2) — run the synthetic example in an actual client session and document its evidence and limits. **Help wanted.**
 
 Start with [CONTRIBUTING.md](CONTRIBUTING.md), [suggest an improvement](https://github.com/goAuD/security-review-ledger/issues/new?template=improvement.md), or fork the repo and open a pull request. You do not need a collaborator invitation. Report vulnerabilities through the [private security channel](SECURITY.md).
 
@@ -86,8 +89,8 @@ The skill follows the [open Agent Skills format](https://agentskills.io/specific
 
 | Check | Evidence and boundary |
 | --- | --- |
-| Recipe handler | Three tests passed in the [recorded Linux run](examples/recipe-access/review.md); also rerun locally on Windows with Node.js 22.23.4 during release preparation. |
-| Codex and Claude Code installation | The recorded CLI installation check below compared all four installed files with the source. |
+| Recipe handler | [Release CI](https://github.com/goAuD/security-review-ledger/actions/runs/42191776042): all three tests passed on Linux and Windows with Node.js 22.20.0 and 24.22.2, with no skips. The original [recorded run](examples/recipe-access/review.md) is preserved. |
+| Codex and Claude Code installation | A fresh `v0.1.0` installation on Windows with skills CLI 1.7.6 and Node.js 22.23.4 matched all four files for each client. See the [release evidence](releases/v0.1.0.md). |
 | Agent behavior | Installation does not establish workflow behavior. An actual Claude Code workflow and additional clients remain open checks. |
 | Automated checks | [GitHub Actions](https://github.com/goAuD/security-review-ledger/actions/workflows/checks.yml) runs the example on Linux and Windows with Node.js 22.20.0 and 24. Inspect the run for the revision you use. |
 

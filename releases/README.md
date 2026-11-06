@@ -1,8 +1,8 @@
 # Releases
 
-This directory holds the text for GitHub Releases. A note in this directory is preparation, not evidence that a release has been published. Published versions are listed on the [GitHub Releases page](https://github.com/goAuD/security-review-ledger/releases).
+This directory holds versioned release notes. Draft notes describe preparation; the [GitHub Releases page](https://github.com/goAuD/security-review-ledger/releases) is authoritative for publication status. Final notes link to the checks performed for that release.
 
-- [v0.1.0 — initial public release](v0.1.0.md)
+- [v0.1.0 — initial public release](v0.1.0.md) · [Published release](https://github.com/goAuD/security-review-ledger/releases/tag/v0.1.0)
 
 The first version is `0.1.0`: the workflow is usable, while the instructions and ledger format may still evolve. Keep each release's changes and compatibility limits in its own note. A separate changelog would duplicate these notes.
 
@@ -28,7 +28,7 @@ The first version is `0.1.0`: the workflow is usable, while the instructions and
    gh release create v0.1.0 --repo goAuD/security-review-ledger --verify-tag --draft --title "v0.1.0 — Security Review Ledger" --notes-file releases/v0.1.0.md
    ```
 
-   Review the draft on GitHub. Replace its pending-verification paragraph with the successful CI run URL and the tagged installation's CLI version, client, environment and result. Publish only once those checks have completed successfully.
+   Review the draft on GitHub. Replace any pending-verification statements with the successful CI run URL and the tagged installation's CLI version, client, environment and result. Publish only once those checks have completed successfully. Copy the final notes back into this directory in a documentation commit; keep the published tag on the tested release commit.
 
    The tag syntax is documented by the [skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md). The installation check itself is still required for the chosen release. GitHub supplies source archives for the tag; this Markdown skill does not need a separate build or hand-made ZIP.
 
