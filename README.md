@@ -44,7 +44,15 @@ Compare the named assertions with [the recorded run](examples/recipe-access/evid
 
 ## Distribution
 
-The skill follows the [open Agent Skills format](https://agentskills.io/specification). Clients that implement the format can load its instructions. Tool availability determines which checks they can run. The [skills.sh directory](https://skills.sh/docs/faq) uses CLI installation telemetry for discovery. A public GitHub install and a visible directory listing are separate milestones.
+The skill follows the [open Agent Skills format](https://agentskills.io/specification). Its public [skills.sh page](https://www.skills.sh/goaud/security-review-ledger/security-review-ledger) includes an installation command and the skill instructions.
+
+On 2026-11-06, the skills CLI 1.7.6 installed the [reviewed revision](https://github.com/goAuD/security-review-ledger/commit/9b9aad4a42af110f2dc5e95d0769bea5473e503b) from public GitHub into a fresh project on Node.js 24.22.1. The command used was:
+
+```sh
+npx --yes skills@1.7.6 add goAuD/security-review-ledger --skill security-review-ledger --agent codex --agent claude-code --copy --yes
+```
+
+The four files installed for each client matched the originals byte for byte. The CLI recorded `skills/security-review-ledger/SKILL.md` as the source. This check covered installation into `.agents/skills/` and `.claude/skills/`. Running the workflow in an actual Claude Code session and testing further clients remain open checks.
 
 ## License
 
