@@ -5,7 +5,7 @@
 
 An Agent Skill that keeps performed checks, their evidence and known gaps in one versioned Markdown ledger. Each scenario has a stable ID, so a new reviewer can see what happened, what remains open and what needs checking again.
 
-[Try it](#try-it) · [Read the example](examples/recipe-access/review.md) · [Contribute](CONTRIBUTING.md) · [Release notes](releases/README.md)
+[Try it](#try-it) · [Read the example](examples/recipe-access/review.md) · [Discuss](https://github.com/goAuD/security-review-ledger/discussions) · [Contribute](CONTRIBUTING.md) · [Release notes](releases/README.md)
 
 ![Synthetic recipe example: five tests cover three behavior groups; real session binding and shared-cache behavior remain open.](.github/assets/ledger-overview.svg)
 
@@ -81,7 +81,7 @@ Useful contributions include a clearer instruction, a small synthetic example or
 - [Add a small `recheck-needed` example](https://github.com/goAuD/security-review-ledger/issues/1) — preserve an old result while recording a changed requirement and a fresh check. **Good first issue.**
 - [Verify one Claude Code workflow](https://github.com/goAuD/security-review-ledger/issues/2) — run the synthetic example in an actual client session and document its evidence and limits. **Help wanted.**
 
-Start with [CONTRIBUTING.md](CONTRIBUTING.md), [suggest an improvement](https://github.com/goAuD/security-review-ledger/issues/new?template=improvement.md), or fork the repo and open a pull request. You do not need a collaborator invitation. Report vulnerabilities through the [private security channel](SECURITY.md).
+Share your experience or ask a question in the [welcome discussion](https://github.com/goAuD/security-review-ledger/discussions/3). For a concrete change, start with [CONTRIBUTING.md](CONTRIBUTING.md), [suggest an improvement](https://github.com/goAuD/security-review-ledger/issues/new?template=improvement.md), or fork the repo and open a pull request. You do not need a collaborator invitation. Report vulnerabilities through the [private security channel](SECURITY.md).
 
 ## Compatibility and evidence
 

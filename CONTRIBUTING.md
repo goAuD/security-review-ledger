@@ -8,7 +8,7 @@ Contributions to the skill, examples and documentation are welcome. You do not n
 - Run the workflow in an actual agent client and document the client version, target revision, steps, observed results and limits. Installing files alone does not demonstrate that the workflow ran.
 - Clarify an instruction that led to an ambiguous or unsupported review conclusion.
 
-Use an [issue](https://github.com/goAuD/security-review-ledger/issues/new/choose) to describe a larger change before implementing it. Small fixes can go straight to a pull request.
+Use [Discussions](https://github.com/goAuD/security-review-ledger/discussions) for questions, experiences and early ideas. Use an [issue](https://github.com/goAuD/security-review-ledger/issues/new/choose) to describe a larger concrete change before implementing it. Small fixes can go straight to a pull request.
 
 ## Make a change
 
@@ -31,6 +31,10 @@ Use an [issue](https://github.com/goAuD/security-review-ledger/issues/new/choose
    For instruction or template changes, also try one relevant scenario with an agent. Record what actually ran and what remains unverified. If you cannot run a check, explain that in the pull request.
 
 4. Commit and push your branch to your fork, then open a pull request against `main`. Explain the problem, the resulting behavior and the checks performed.
+
+The [main branch ruleset](https://github.com/goAuD/security-review-ledger/rules/26684736) requires a pull request, an up-to-date branch, all four recipe-example CI checks and resolved review conversations before merging. Force pushes and deletion of `main` are blocked, with no bypass actors. The required approval count is currently zero so the solo maintainer can merge their own pull requests after checks pass.
+
+If a change renames CI jobs or changes the Node.js matrix, coordinate the required check names in the ruleset with the maintainer so merges do not wait for a check that no longer runs.
 
 ## Preserve the review contract
 
