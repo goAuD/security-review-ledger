@@ -71,6 +71,9 @@ Read the [requirement](examples/recipe-access/requirement.md), then compare your
 | [Skill instructions](skills/security-review-ledger/SKILL.md) | Define scope, check claims, preserve attempts and report in the user's language. |
 | [Ledger template](skills/security-review-ledger/assets/ledger-template.md) | Start a review with two views of one set of scenario records. |
 | [Standards references](skills/security-review-ledger/references/standards.md) | Select bounded mappings to ISO/IEC 27034-1, NIST SSDF and OWASP ASVS. |
+| [Local evidence guide](skills/security-review-ledger/references/local-evidence.md) | Select the project runtime, distinguish attempted from completed checks and preserve private evidence. |
+
+The working-copy instructions add a requirement/hypothesis table and scenario matrix, and record whether a check reached its target and assertion. See the [unreleased notes](releases/unreleased.md) for verification and limits. The pinned `v0.1.0` installation above continues to use the published version; to try these changes before release, point your agent at this checkout's `skills/security-review-ledger/SKILL.md`.
 
 Conclusions apply to the examined scope. Standards references do not establish compliance, and an empty gap list does not establish complete coverage. Keep private application reports in an authorized location; the examples here use synthetic data.
 
