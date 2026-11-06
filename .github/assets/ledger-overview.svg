@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="350" viewBox="0 0 720 350" fill="#17344a" role="img" aria-labelledby="ledger-title ledger-desc">
+  <title id="ledger-title">Security Review Ledger: evidence and known gaps</title>
+  <desc id="ledger-desc">One review has two views. In the synthetic recipe example, three tests passed: ownership, cross-kitchen denial, and anonymous denial. Two questions remain open: real session binding and shared cache behavior. These results describe the example, not a repository-wide audit.</desc>
+  <style>
+    text { font-family: "Segoe UI", system-ui, sans-serif; }
+    .utility { font-family: Consolas, "Liberation Mono", monospace; }
+    .heading { font-size: 23px; font-weight: 650; }
+    .label { font-size: 24px; font-weight: 500; }
+  </style>
+
+  <rect width="720" height="350" rx="12" fill="#f8fafc"/>
+  <text x="28" y="35" class="utility" font-size="15" letter-spacing="1.4" fill="#33678e">SECURITY REVIEW LEDGER</text>
+  <text x="28" y="78" font-size="32" font-weight="700" letter-spacing="-0.7">What ran. What still needs a check.</text>
+
+  <!-- One continuous record, divided into its two views. -->
+  <path d="M28 109 H374" stroke="#33678e" stroke-width="4"/>
+  <path d="M374 109 H692" stroke="#946316" stroke-width="4" stroke-dasharray="7 5"/>
+  <path d="M374 130 V288" stroke="#5b6c7b" stroke-opacity="0.2"/>
+
+  <text x="28" y="147" class="heading">Checks performed</text>
+  <text x="347" y="147" text-anchor="end" class="utility" font-size="18" fill="#2e765e">3/3</text>
+  <text x="400" y="147" class="heading">Known gaps</text>
+  <text x="692" y="147" text-anchor="end" class="utility" font-size="18" fill="#946316">2</text>
+
+  <g fill="none" stroke="#2e765e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M29 181 l5 5 10-12"/>
+    <path d="M29 227 l5 5 10-12"/>
+    <path d="M29 273 l5 5 10-12"/>
+  </g>
+  <text x="57" y="190" class="label">Ownership</text>
+  <text x="57" y="236" class="label">Cross-kitchen denial</text>
+  <text x="57" y="282" class="label">Anonymous denial</text>
+
+  <g fill="none" stroke="#946316" stroke-width="2">
+    <circle cx="407" cy="182" r="6"/>
+    <circle cx="407" cy="228" r="6"/>
+  </g>
+  <text x="428" y="190" class="label">Real session binding</text>
+  <text x="428" y="236" class="label">Shared cache</text>
+  <text x="400" y="280" font-size="18" fill="#5b6c7b">Open questions stay visible.</text>
+
+  <path d="M28 306 H692" stroke="#5b6c7b" stroke-opacity="0.2"/>
+  <text x="28" y="332" font-size="18" fill="#5b6c7b">Synthetic recipe example · Direct handler tests only</text>
+</svg>

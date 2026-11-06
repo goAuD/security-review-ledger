@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability privately
+    url: https://github.com/goAuD/security-review-ledger/security/advisories/new
+    about: Report vulnerabilities in this skill or its bundled examples without public disclosure.
