@@ -33,3 +33,29 @@ test('T03 anonymous request for a real recipe receives no recipe data', async ()
   assert.equal(result.status, 401);
   assert.deepEqual(await result.json(), { error: 'sign-in required' });
 });
+
+test('T04 forged kitchen query does not change a permitted recipe read', async () => {
+  const baseline = readRecipe(new Request('https://example.test/recipe?id=r1'), memberA, recipes);
+  const result = readRecipe(
+    new Request('https://example.test/recipe?id=r1&kitchenId=kitchen-b'), memberA, recipes,
+  );
+
+  assert.equal(result.status, 200);
+  assert.equal(result.status, baseline.status);
+  const body = await result.json();
+  assert.deepEqual(body, { id: 'r1', title: 'Bean soup' });
+  assert.deepEqual(body, await baseline.json());
+});
+
+test('T05 forged kitchen header does not change a permitted recipe read', async () => {
+  const baseline = readRecipe(new Request('https://example.test/recipe?id=r1'), memberA, recipes);
+  const result = readRecipe(new Request('https://example.test/recipe?id=r1', {
+    headers: { 'X-Kitchen-ID': 'kitchen-b' },
+  }), memberA, recipes);
+
+  assert.equal(result.status, 200);
+  assert.equal(result.status, baseline.status);
+  const body = await result.json();
+  assert.deepEqual(body, { id: 'r1', title: 'Bean soup' });
+  assert.deepEqual(body, await baseline.json());
+});

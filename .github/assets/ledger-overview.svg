@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="350" viewBox="0 0 720 350" fill="#17344a" role="img" aria-labelledby="ledger-title ledger-desc">
   <title id="ledger-title">Security Review Ledger: evidence and known gaps</title>
-  <desc id="ledger-desc">One review has two views. In the synthetic recipe example, three tests passed: ownership, cross-kitchen denial, and anonymous denial. Two questions remain open: real session binding and shared cache behavior. These results describe the example, not a repository-wide audit.</desc>
+  <desc id="ledger-desc">One review has two views. In the synthetic recipe example, five tests check three behavior groups: ownership, cross-kitchen denial and anonymous denial. Two questions remain open: real session binding and shared cache behavior. These results describe the example, not a repository-wide audit.</desc>
   <style>
     text { font-family: "Segoe UI", system-ui, sans-serif; }
     .utility { font-family: Consolas, "Liberation Mono", monospace; }
@@ -17,7 +17,7 @@
   <path d="M374 109 H692" stroke="#946316" stroke-width="4" stroke-dasharray="7 5"/>
   <path d="M374 130 V288" stroke="#5b6c7b" stroke-opacity="0.2"/>
 
-  <text x="28" y="147" class="heading">Checks performed</text>
+  <text x="28" y="147" class="heading">Behaviors checked</text>
   <text x="347" y="147" text-anchor="end" class="utility" font-size="18" fill="#2e765e">3/3</text>
   <text x="400" y="147" class="heading">Known gaps</text>
   <text x="692" y="147" text-anchor="end" class="utility" font-size="18" fill="#946316">2</text>
@@ -40,5 +40,5 @@
   <text x="400" y="280" font-size="18" fill="#5b6c7b">Open questions stay visible.</text>
 
   <path d="M28 306 H692" stroke="#5b6c7b" stroke-opacity="0.2"/>
-  <text x="28" y="332" font-size="18" fill="#5b6c7b">Synthetic recipe example · Direct handler tests only</text>
+  <text x="28" y="332" font-size="18" fill="#5b6c7b">Synthetic recipe example · Five direct handler tests</text>
 </svg>

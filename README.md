@@ -7,16 +7,16 @@ An Agent Skill that keeps performed checks, their evidence and known gaps in one
 
 [Try it](#try-it) · [Read the example](examples/recipe-access/review.md) · [Contribute](CONTRIBUTING.md) · [Release notes](releases/README.md)
 
-![Synthetic recipe example: three handler checks passed; real session binding and shared-cache behavior remain open.](.github/assets/ledger-overview.svg)
+![Synthetic recipe example: five tests cover three behavior groups; real session binding and shared-cache behavior remain open.](.github/assets/ledger-overview.svg)
 
-## Three passing tests. Two open questions.
+## Five passing tests. Two open questions.
 
 Two kitchens use the same recipe service. The [working example](examples/recipe-access/review.md) shows exactly what the tests establish and where their evidence stops.
 
 | Checks performed | Known gaps and follow-up |
 | --- | --- |
 | **SR-001** — A member can read their kitchen's recipe. | **SR-004** — Does the real login system bind the session to the right kitchen? |
-| **SR-002** — Another kitchen's recipe returns the same status and JSON as a missing recipe, even with forged kitchen IDs. | **SR-005** — Could a shared cache serve one kitchen's response to another? |
+| **SR-002** — Foreign and missing recipes have matching responses. A forged kitchen query or header also leaves a permitted read unchanged. | **SR-005** — Could a shared cache serve one kitchen's response to another? |
 | **SR-003** — An anonymous request receives no recipe data. | Both questions need checks outside this in-memory fixture. |
 
 The two views point to the same scenario records. An unresolved finding can appear in both: the check happened, and work remains. A relevant change marks earlier evidence for recheck while keeping its history.
@@ -60,7 +60,7 @@ cd security-review-ledger
 node --test --test-reporter=tap examples/recipe-access/read-recipe.test.mjs
 ```
 
-Read the [requirement](examples/recipe-access/requirement.md), then compare your results with the [recorded run](examples/recipe-access/evidence/run.tap) and [sample ledger](examples/recipe-access/review.md). The sample records its own date, environment and file digests; your run is new evidence.
+Read the [requirement](examples/recipe-access/requirement.md), then compare your results with the [latest recorded run](examples/recipe-access/evidence/a3-20261106T092335Z.tap) and [sample ledger](examples/recipe-access/review.md). The ledger preserves the earlier three-test runs alongside the new five-test run, with each attempt's date, environment and file digests. Your run is new evidence.
 
 ## What goes into a review
 
@@ -89,7 +89,7 @@ The skill follows the [open Agent Skills format](https://agentskills.io/specific
 
 | Check | Evidence and boundary |
 | --- | --- |
-| Recipe handler | [Release CI](https://github.com/goAuD/security-review-ledger/actions/runs/42191776042): all three tests passed on Linux and Windows with Node.js 22.20.0 and 24.22.2, with no skips. The original [recorded run](examples/recipe-access/review.md) is preserved. |
+| Recipe handler | The [current example review](examples/recipe-access/review.md) records five passing tests on Windows with Node.js 22.23.4. The earlier [v0.1.0 release CI](https://github.com/goAuD/security-review-ledger/actions/runs/42191776042) covered the original three tests on Linux and Windows with Node.js 22.20.0 and 24.22.2. |
 | Codex and Claude Code installation | A fresh `v0.1.0` installation on Windows with skills CLI 1.7.6 and Node.js 22.23.4 matched all four files for each client. See the [release evidence](releases/v0.1.0.md). |
 | Agent behavior | Installation does not establish workflow behavior. An actual Claude Code workflow and additional clients remain open checks. |
 | Automated checks | [GitHub Actions](https://github.com/goAuD/security-review-ledger/actions/workflows/checks.yml) runs the example on Linux and Windows with Node.js 22.20.0 and 24. Inspect the run for the revision you use. |
