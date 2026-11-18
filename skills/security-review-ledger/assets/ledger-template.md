@@ -41,6 +41,7 @@ If counts help, report completed comparisons, blocked/skipped checks and observa
 - **Current state** <one state from the skill>.
 - **Basis and impact** <source of expectation or labeled hypothesis, affected actor or asset>.
 - **Expected** <observable condition, input and expected result>.
+- **Standards mapping** (optional) <link to the applicable edition and identifier, related attempt or gap, and limit of the evidence>.
 - **History** <append attempts without overwriting earlier evidence>.
   - <A1, date, target revision and relevant environment>. <Method, command/run ID or exact manual steps, test names and inputs>. <Attempt/target/comparison status, observed result, sanitized evidence and procedure-version reference, limit>.
 - **Open work** <remaining portion or finding, prerequisite, proposed check, recheck trigger>.

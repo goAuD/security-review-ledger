@@ -2,6 +2,22 @@
 
 **Current attempt: A3.** Five tests passed after the response schema was clarified and two permitted-read cases were added. SR-004 and SR-005 remain unexamined. The tables below index the dated attempts in one set of scenario records; A1 and A2 remain historical evidence.
 
+## Scenario matrix
+
+| Scenario | Expectation source | State at A3 | Latest evidence | Remaining gap |
+| --- | --- | --- | --- | --- |
+| [SR-001 · Own recipe](#sr-001) | [R1][r1] | `no-issue-observed` | [A3, T01][a3] | None for the tested actor and recipe. |
+| [SR-002 · Other kitchen's recipe](#sr-002) | [R1][r1] | `no-issue-observed` | [A3, T02, T04 and T05][a3] | None for the named inputs. |
+| [SR-003 · Anonymous read](#sr-003) | [R1][r1] | `no-issue-observed` | [A3, T03][a3] | None for the tested null session. |
+| [SR-004 · Session identity](#sr-004) | [R1][r1], server-supplied membership | `unexamined` | No integration attempt | Which kitchen does a real session identify? |
+| [SR-005 · Shared cache](#sr-005) | Deployment hypothesis | `unexamined` | No shared cache exercised | Can a cached response reach another kitchen? |
+| [SR-006 · Response contract](#sr-006) | [Maintainer-approved R1][r1] | `no-issue-observed` | A3, [test assertions](read-recipe.test.mjs) compared with R1 | None for the specified responses. |
+
+[r1]: requirement.md
+[a3]: evidence/a3-20261106T092335Z.tap
+
+## Review history
+
 **Run A1 context (historical)** 2026-11-06 07:37 UTC. Node.js v24.22.1, Linux x64, built-in Fetch API and test runner. The unit under review is the in-process [recipe handler](read-recipe.mjs). Kitchen A's synthetic member requested both kitchens' records. [Requirement R1 at A1](https://github.com/goAuD/security-review-ledger/blob/v0.1.0/examples/recipe-access/requirement.md) was cited as defining the acceptable status and JSON body. Deployment, login, timing differences and a real HTTP cache were outside the run.
 
 **Expectation-source correction identified in A2:** the original R1 required anonymous requests to receive 401 and foreign/absent responses to match, but did not specify 404, the literal error messages or the exact successful-response fields. Those exact A1 expectations came from the tests. A3 uses the subsequently confirmed response contract; it does not retroactively change the basis of A1 or A2.
@@ -68,6 +84,8 @@
 **A2 update — `partial`:** T02 passed again. Inspection showed that the handler reads only `id` and the supplied session's kitchen, but runtime checks did not cover a permitted read with either forged input separately. An implementation that rejected all such requests could pass the original tests while denying legitimate reads.
 
 **A3 update — `no-issue-observed`:** T02 still passed. T04 requested A's `r1` with query `kitchenId=kitchen-b`; T05 requested it with header `X-Kitchen-ID: kitchen-b`. Each independently observed 200 and `{"id":"r1","title":"Bean soup"}`, matching its plain-request baseline. The permitted-read coverage gap identified in A2 is closed for these named inputs. This does not establish every possible query/header combination.
+
+**Standards mapping for A3.** ASVS v5.0.0-8.2.2 concerns permission to access a particular record. Member A could read A's recipe in T01 and received the 404 and JSON body specified by R1 for B's recipe in T02. Both tests supplied the session directly, leaving real session binding open. [ASVS requirement](https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/en/0x17-V8-Authorization.md#v82-general-authorization-design) · [R1][r1] · [A3 evidence][a3] · [SR-004](#sr-004)
 
 ### SR-003
 

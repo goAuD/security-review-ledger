@@ -4,6 +4,7 @@ This directory holds versioned release notes. Draft notes describe preparation; 
 
 - [v0.1.0 — initial public release](v0.1.0.md) · [Published release](https://github.com/goAuD/security-review-ledger/releases/tag/v0.1.0)
 - [v0.1.1 — evidence precision](v0.1.1.md) · [Published release](https://github.com/goAuD/security-review-ledger/releases/tag/v0.1.1)
+- [v0.1.2 — standards references and review evidence](v0.1.2.md)
 
 The first version is `0.1.0`: the workflow is usable, while the instructions and ledger format may still evolve. Keep each release's changes and compatibility limits in its own note. A separate changelog would duplicate these notes.
 
